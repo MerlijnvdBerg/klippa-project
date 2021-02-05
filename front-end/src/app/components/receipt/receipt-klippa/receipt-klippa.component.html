@@ -1,0 +1,11 @@
+<div class="wrapper">
+	<form [formGroup]="klippaForum">
+		<select name="template" formControlName="template">
+			<option value="" selected="selected">Default</option>
+			<option *ngFor="let template of templates | keyvalue " [value]="template.key">{{template.value}}</option>
+		</select>
+		<input type="text" formControlName="apiKey">
+		<button class="" type="submit" (click)="export('fast')"> Fast export</button>
+		<button class="" type="submit" (click)="export('full')"> full export </button>
+	</form>
+</div>

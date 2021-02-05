@@ -1,0 +1,15 @@
+<div class="wrapper">
+	<div class="list" *ngIf="receipts.length > 0">
+		<app-receipt-item *ngFor="let receipt of receipts" [receipt]="receipt"
+						  (click)="openReceipt(receipt.id)"></app-receipt-item>
+	</div>
+	<div class="list" *ngIf="receipts.length == 0">
+		<p class="noReceipt">No receipts here!</p>
+	</div>
+	<div class="buttonWrapper">
+		<button class="btnPrev" type="button" (click)="imgPrev()" [disabled]="currentPage == 0"> <</button>
+		<div class="button">{{currentPage+1}}</div>
+		<button class="btnNext" type="button" (click)="imgNext()" [disabled]="receipts.length < pageAmount"> > </button>
+	</div>
+</div>
+

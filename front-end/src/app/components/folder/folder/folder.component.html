@@ -1,0 +1,26 @@
+<div class="folder">
+	<button (click)="togglePanelUpdate(null)">Add folder</button>
+
+	<!-- === Add or Update panel === -->
+	<app-panel *ngIf="panelOpenUpdate"
+			   (TogglePanel)="togglePanelUpdate($event)">
+		<app-folder-add [folder]="folder"></app-folder-add>
+	</app-panel>
+
+	<!-- === Receipt list === -->
+	<app-panel *ngIf="panelOpenView"
+			   (TogglePanel)="togglePanelView($event)">
+		<app-receipt-list [receipts]="receipts" (OpenReceipt)="togglePanelItem($event)"></app-receipt-list>
+	</app-panel>
+
+	<!-- === View or Update Receipt === -->
+	<app-panel *ngIf="panelOpenItem"
+			   (TogglePanel)="togglePanelItem($event)">
+		<app-receipt-add [receipt]="receipt"></app-receipt-add>
+	</app-panel>
+
+	<div class="wrapper">
+		<app-folder-list (OpenFolder)="togglePanelView($event)"
+						 (UpdateFolder)="togglePanelUpdate($event)"></app-folder-list>
+	</div>
+</div>

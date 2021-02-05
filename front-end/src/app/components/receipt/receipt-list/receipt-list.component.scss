@@ -1,0 +1,21 @@
+.wrapper{
+	height: calc(100% - 3rem);
+	padding-bottom: 3rem;
+}
+.list {
+	overflow-y: scroll;
+	height: 100%;
+	& .noReceipt{
+		width: 100%;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+}
+.buttonWrapper{
+	width: 100%;
+	text-align: center;
+	& > div {
+		margin: 0 10px;
+		display: inline-block;
+	}
+}

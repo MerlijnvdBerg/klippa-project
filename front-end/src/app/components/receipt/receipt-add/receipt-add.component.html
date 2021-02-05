@@ -1,0 +1,43 @@
+<form [formGroup]="receiptForum" (ngSubmit)="submit()">
+	<div class="wrapper formWrapper">
+		<label> Name:
+			<input type="text" formControlName="name">
+		</label>
+
+		<label> Folder:
+			<select name="folders" formControlName="folder">
+				<option *ngFor="let folder of folders" [value]="folder.id">{{folder.name}}</option>
+			</select>
+		</label>
+
+		<label> Amount:
+			<input type="number" formControlName="amount">
+		</label>
+
+		<label> Date:
+			<input type="datetime-local" formControlName="date">
+		</label>
+
+	</div>
+
+	<div class="wrapper fileWrapper">
+
+		<div class="buttonWrapper" *ngIf="filePreviews.length > 0">
+			<button class="btnPrev" type="button" (click)="imgPrev()" [disabled]="currentImg == 0"> <</button>
+			<button class="btnNext" type="button" (click)="imgNext()" [disabled]="currentImg == filePreviews.length -1"> > </button>
+			<label class="button" for="fileUpload"> + </label>
+		</div>
+
+		<label class="uploadWrapper" for="fileUpload" [class.hidden]="filePreviews.length > 0">
+			<input type="file" id="fileUpload" accept="application/pdf, image/png, image/jpeg" multiple
+				   (change)="onFileChange($event)">
+		</label>
+		<img *ngIf="filePreviews.length > 0" [src]="filePreviews[currentImg].url">
+
+		<app-receipt-klippa class="buttonWrapper" [filePreviews]="filePreviews" [currentImg]="currentImg" *ngIf="filePreviews.length > 0"></app-receipt-klippa>
+
+	</div>
+	<div class="buttonWrapper">
+		<input type="submit" class="button" id="submit" value="Save">
+	</div>
+</form>

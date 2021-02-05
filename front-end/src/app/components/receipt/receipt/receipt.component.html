@@ -1,0 +1,24 @@
+<div class="receipt">
+	<button (click)="togglePanelReceipt(null)">Add receipt</button>
+
+	<app-panel *ngIf="panelOpenReceipt"
+			   (TogglePanel)="togglePanelReceipt($event)">
+		<app-receipt-add [receipt]="receipt" (alert)="alert($event)"> </app-receipt-add>
+	</app-panel>
+
+
+	<app-panel *ngIf="panelOpenProcessed" (TogglePanel)="togglePanelProcessed()">
+		<app-receipt-view > </app-receipt-view>
+	</app-panel>
+
+	<div class="wrapper">
+		<app-receipt-list [receipts]="receipts"
+						  (OpenReceipt)="togglePanelReceipt($event)"></app-receipt-list>
+	</div>
+
+	<div class="alert" *ngIf="alertPanel != null">
+		<div [className]="alertPanel[0]">
+			{{alertPanel[1]}}
+		</div>
+	</div>
+</div>

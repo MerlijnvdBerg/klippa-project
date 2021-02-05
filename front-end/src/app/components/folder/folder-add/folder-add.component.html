@@ -1,0 +1,10 @@
+<form [formGroup]="folderForum" (ngSubmit)="submit()">
+	<div class="wrapper formWrapper">
+		<label> Name:
+			<input type="text" formControlName="name">
+		</label>
+	</div>
+	<div class="buttonWrapper">
+		<input type="submit" class="button" value="Save">
+	</div>
+</form>

@@ -1,0 +1,40 @@
+.receipt{
+	width: calc(100% - 6rem);
+	height: 80%;
+	max-height: 600px;
+	background: white;
+	margin: 3rem;
+	padding: 1rem;
+}
+.wrapper{
+	height: calc(100% - 3rem);
+	margin-top: 3rem;
+}
+button{
+	float: right;
+}
+.alert {
+	& > div{
+		position: fixed;
+		top: -100px;
+		left: 0;
+		margin: 8px;
+		padding: 2rem 8px;
+		text-align: center;
+		color: white;
+		width: 200px;
+		word-break: break-word;
+		overflow: hidden;
+		transition: all .3s linear;
+		border-radius: 4px;
+	}
+}
+
+.success{
+	background: var(--accent);
+	top: 0 !important;
+}
+.warning{
+	background: #fadd3e;
+	top: 0 !important;
+}

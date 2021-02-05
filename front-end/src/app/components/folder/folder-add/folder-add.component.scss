@@ -1,0 +1,63 @@
+form {
+	height: 100%;
+}
+
+.wrapper {
+	width: 50%;
+	float: left;
+	height: calc(100% - 4rem);
+}
+
+.formWrapper {
+	& input, select {
+		width: 80%;
+		padding: .5rem 1rem;
+		margin-top: 5px;
+		display: block;
+	}
+
+	& label {
+		width: 100%;
+		padding: 1rem .5rem;
+		display: block;
+	}
+}
+
+.fileWrapper {
+	& img {
+		width: 100%;
+	}
+
+	& input {
+		//height: 100%;
+		//width: 100%;
+	}
+
+	& .uploadWrapper {
+		width: calc(100% - 4rem);
+		height: calc(100% - 6rem);
+		padding: 2rem;
+		background: var(--background);
+		border: lightblue 3px dashed;
+		border-radius: 2px;
+		display: block;
+		text-align: center;
+	}
+}
+
+.buttonWrapper {
+	width: 100%;
+	text-align: center;
+
+	& .btnPrev {
+		float: left;
+	}
+
+	& .btnNext {
+		float: right;
+	}
+
+	& label {
+		display: inline-block
+	}
+}

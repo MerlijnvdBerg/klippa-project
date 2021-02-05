@@ -1,0 +1,23 @@
+<div class="wrapper">
+
+	<div class="fields" *ngIf="documentType == 0">
+		<div class="line" *ngFor="let field of fields | keyvalue">
+			<p>{{ prettyString(field.key)}}</p>
+			<p>{{field.value}}</p>
+		</div>
+	</div>
+
+	<div class="fields" *ngIf="documentType == 1">
+		<div *ngFor="let line of lines">
+			<div  class="line" *ngFor="let field of line | keyvalue">
+				<p>{{ prettyString(field.key) }}</p>
+				<p>{{field.value}}</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="buttonWrapper"><a class="button" [href]="receiptFileLocation" target="_blank" download>Download</a>
+	</div>
+</div>
+

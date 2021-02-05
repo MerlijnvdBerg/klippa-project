@@ -1,0 +1,5 @@
+<ul>
+	<app-folder-item *ngFor="let folder of folders" [folder]="folder"
+					 (click)="openFolder($event, folder.id)"
+					 (UpdateFolder)="updateFolder($event)"></app-folder-item>
+</ul>
