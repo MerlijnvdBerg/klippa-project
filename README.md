@@ -12,8 +12,7 @@ Dit project bestaat uit 3 delen
 ```
 2: De MySql database.
 
-- creeer een Mysql databse en zet de desbetrevende waardes in
-  het .env bestand
+- Creëer een Mysql database en zet de database waardes in het .env bestand
 
 3: De backend, gemaakt in Nodejs/Typescript.
 ```
@@ -21,4 +20,4 @@ Dit project bestaat uit 3 delen
     npm install
     npm run serve
 ```
-- Koppieer het .env.example bestaand naar de build folder als .env
+- Kopieer het .env.example bestaand naar de build folder als .env
